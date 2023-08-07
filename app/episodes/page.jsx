@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import api from '../../axios/config';
 
 export default async function Episodes() {
@@ -9,7 +10,11 @@ export default async function Episodes() {
       <ul>
         {data &&
           data.results &&
-          data.results.map((character) => <li>{character.name}</li>)}
+          data.results.map((episode) => (
+            <li key={episode.id}>
+              <Link href={`/episodes/${episode.id}`}>{episode.name}</Link>
+            </li>
+          ))}
       </ul>
     </main>
   );

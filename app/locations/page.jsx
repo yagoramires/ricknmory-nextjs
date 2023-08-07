@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import api from '../../axios/config';
 
 export default async function Locations() {
@@ -9,7 +10,11 @@ export default async function Locations() {
       <ul>
         {data &&
           data.results &&
-          data.results.map((character) => <li>{character.name}</li>)}
+          data.results.map((location) => (
+            <li key={location.id}>
+              <Link href={`/locations/${location.id}`}>{location.name}</Link>
+            </li>
+          ))}
       </ul>
     </main>
   );
