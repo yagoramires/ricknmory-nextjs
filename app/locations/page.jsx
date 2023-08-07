@@ -1,7 +1,7 @@
 import api from '../../axios/config';
 
-export default async function Characters() {
-  const { data } = await api.get('/character');
+export default async function Locations() {
+  const { data } = await api.get('/location');
   console.log(data);
 
   return (

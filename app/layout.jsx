@@ -1,6 +1,6 @@
 import './globals.css';
 import { Poppins } from 'next/font/google';
-import Header from './components/Header';
+import Header from '../components/Header';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} min-h-screen bg-zinc-400 flex items-center justify-center`}
       >
-        <div className='h-[80vh] w-[90%] max-w-[1280px] border-[1px] border-zinc-500 rounded-lg bg-zinc-300'>
+        <div className='h-[80vh] w-[90%] max-w-[1280px] border-[1px] border-zinc-500 rounded-lg bg-zinc-300 overflow-hidden'>
           <Header />
           {children}
         </div>
